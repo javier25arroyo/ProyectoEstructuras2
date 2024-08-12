@@ -18,17 +18,17 @@ int main()
     cout << "Ingrese el nombre del trabajador: ";
     getline(cin, trabajador.nombre);
 
-    cout << "Ingrese la cédula del trabajador: ";
+    cout << "Ingrese la cedula del trabajador: ";
     getline(cin, trabajador.cedula);
 
     size_t numNominas;
-    cout << "Ingrese el número de nóminas: ";
+    cout << "Ingrese el numero de nominas: ";
     cin >> numNominas;
     trabajador.nominas.resize(numNominas);
 
     //Ciclo para cada nomina a agregar // lo ideal es agregarla 1 por 1 cuando ya haya interfaz grafica
     for (size_t i = 0; i < numNominas; ++i) {
-        cout << "\nIngrese los datos para la nómina " << i + 1 << ":\n";
+        cout << "\nIngrese los datos para la nomina " << i + 1 << ":\n";
 
         cout << "Horas trabajadas: ";
         cin >> trabajador.nominas[i].horasTrabajados;
@@ -54,7 +54,7 @@ int main()
 
     //Imprimir Datos
     cout << "Nombre: " << trabajadorLeido.nombre << endl;
-    cout << "Cédula: " << trabajadorLeido.cedula << endl;
+    cout << "Cedula: " << trabajadorLeido.cedula << endl;
     for (const auto& nomina : trabajadorLeido.nominas) {
         cout <<"------Nomina------" << endl;
         cout << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
@@ -63,14 +63,3 @@ int main()
         cout << "Deducciones: " << nomina.deducciones << endl;
     }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

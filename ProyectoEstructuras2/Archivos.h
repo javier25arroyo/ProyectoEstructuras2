@@ -17,8 +17,8 @@ void escribirArchivo(const Trabajador& trabajador, const string& filename) {
     }
 
     archivo << "Nombre: " << trabajador.nombre << endl;
-    archivo << "Cédula: " << trabajador.cedula << endl;
-    archivo << "Número de Nóminas: " << trabajador.nominas.size() << endl; //anhade la cantidad de nominas al archivo
+    archivo << "Cedula: " << trabajador.cedula << endl;
+    archivo << "Numero de nominas: " << trabajador.nominas.size() << endl; //anhade la cantidad de nominas al archivo
 
     for (const auto& nomina : trabajador.nominas) {
         archivo << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
@@ -67,5 +67,5 @@ void leerArchivo(Trabajador& trabajador, const string& filename) {
     }
 
     archivo.close();
-    cout << "Datos leídos del archivo." << endl;
+    cout << "Datos leidos del archivo." << endl;
 }
