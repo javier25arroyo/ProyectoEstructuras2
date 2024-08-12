@@ -1,0 +1,7 @@
+Nombre: Sebastian Chinchilla
+Cédula: 117130777
+Número de Nóminas: 1
+Horas Trabajadas: 10
+Horas Extras: 3
+Monto a Pagar: 30000
+Deducciones: 1000

@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="ProyectoEstructuras2.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Archivos.h" />
+    <ClInclude Include="Nomina.h" />
+    <ClInclude Include="Trabajador.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

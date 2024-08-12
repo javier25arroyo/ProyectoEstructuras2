@@ -1,0 +1,15 @@
+Nombre: Juan Perez
+Cédula: 123456789
+Número de Nóminas: 3
+Horas Trabajadas: 40
+Horas Extras: 5
+Monto a Pagar: 500
+Deducciones: 50
+Horas Trabajadas: 58
+Horas Extras: 2
+Monto a Pagar: 480
+Deducciones: 45
+Horas Trabajadas: 48
+Horas Extras: 2
+Monto a Pagar: 480
+Deducciones: 45
