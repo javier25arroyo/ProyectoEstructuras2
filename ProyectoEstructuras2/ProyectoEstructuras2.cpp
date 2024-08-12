@@ -42,7 +42,7 @@ int main()
         cout << "Deducciones: ";
         cin >> trabajador.nominas[i].deducciones;
     }
-
+    //a
 
     string filename = trabajador.nombre+".txt";
     //escribir el archivo
