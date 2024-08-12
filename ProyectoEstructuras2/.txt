@@ -1,0 +1,7 @@
+Nombre: 
+Cédula: 
+Número de Nóminas: 1
+Horas Trabajadas: 1
+Horas Extras: 1
+Monto a Pagar: 1
+Deducciones: 1
