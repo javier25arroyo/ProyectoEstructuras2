@@ -131,9 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archivos.h" />
-    <ClInclude Include="Buscar.h" />
-    <ClInclude Include="Crear.h" />
-    <ClInclude Include="Eliminar.h" />
     <ClInclude Include="Nomina.h" />
     <ClInclude Include="Trabajador.h" />
   </ItemGroup>

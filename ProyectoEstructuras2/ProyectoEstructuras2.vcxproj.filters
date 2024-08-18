@@ -29,14 +29,5 @@
     <ClInclude Include="Archivos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Buscar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Crear.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eliminar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
