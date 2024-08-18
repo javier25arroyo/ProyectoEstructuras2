@@ -1,4 +1,9 @@
 // ProyectoEstructuras2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// 
+// 
+// Este es el trabajo del Grupo conformado por Sebastian Chinchilla, Javier Arroyo y Daniel Echeverria
+// 
+// 
 //
 
 #include <iostream>
