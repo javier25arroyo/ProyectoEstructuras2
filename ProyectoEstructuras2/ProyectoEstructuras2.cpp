@@ -49,6 +49,7 @@ int main() {
         cout << "2. Buscar trabajador\n";
         cout << "3. Eliminar trabajador\n";
         cout << "4. Salir\n";
+        cout << "-----------------------------\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore(); // Para limpiar el buffer de entrada

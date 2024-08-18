@@ -1,0 +1,11 @@
+Nombre: Daniel
+Cedula: 1243234
+Numero de nominas: 2
+Horas Trabajadas: 24
+Horas Extras: 2
+Monto a Pagar: 100000
+Deducciones: 10000
+Horas Trabajadas: 20
+Horas Extras: 5
+Monto a Pagar: 102000
+Deducciones: 12000

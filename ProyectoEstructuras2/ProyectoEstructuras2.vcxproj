@@ -128,7 +128,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Archivos.cpp" />
     <ClCompile Include="ProyectoEstructuras2.cpp" />
+    <ClCompile Include="Trabajador.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archivos.h" />
