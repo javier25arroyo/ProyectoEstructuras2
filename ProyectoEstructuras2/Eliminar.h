@@ -12,5 +12,4 @@ void eliminarTrabajador(Trabajador& trabajador) {
 	trabajador.nombre = "";
 	trabajador.cedula = "";
 	trabajador.nominas.clear();
-	cout << "Datos eliminados." << endl;
 }

@@ -8,7 +8,6 @@
 #include <vector>
 
 #include "Archivos.h"
-
 #include "Nomina.h"
 int main()
 {

@@ -4,30 +4,60 @@
 #include <vector>
 #include <string>
 
+#include "Archivos.h"
 #include "Trabajador.h"
 
 using namespace std;
 
-void crearTrabajador(Trabajador& trabajador, const string& filename) {
-	ofstream archivo(filename);
+void crearTrabajador(vector<Trabajador>& trabajadores) {
+	Trabajador trabajador;
 
-	if (!archivo) {
-		cerr << "Error al abrir el archivo para escribir." << endl;
-		return;
+	cout << "Ingrese el nombre del trabajador: ";
+	getline(cin, trabajador.nombre);
+
+	cout << "Ingrese la cedula del trabajador: ";
+	getline(cin, trabajador.cedula);
+
+	size_t numNominas;
+	cout << "Ingrese el numero de nominas: ";
+	cin >> numNominas;
+
+	trabajador.nominas.resize(numNominas);
+
+	for (size_t i = 0; i < numNominas; ++i) {
+		cout << "\nIngrese los datos para la nomina " << i + 1 << ":\n";
+
+		cout << "Horas trabajadas: ";
+		cin >> trabajador.nominas[i].horasTrabajados;
+
+		cout << "Horas extras: ";
+		cin >> trabajador.nominas[i].horasExtras;
+
+		cout << "Monto a pagar: ";
+		cin >> trabajador.nominas[i].montoPagar;
+
+		cout << "Deducciones: ";
+		cin >> trabajador.nominas[i].deducciones;
 	}
+	//a
 
-	archivo << "Nombre: " << trabajador.nombre << endl;
-	archivo << "Cedula: " << trabajador.cedula << endl;
-	archivo << "Numero de nominas: " << trabajador.nominas.size() << endl; //anhade la cantidad de nominas al archivo
+	string filename = trabajador.nombre + ".txt";
+	//escribir el archivo
+	escribirArchivo(trabajador, filename);
 
-	for (const auto& nomina : trabajador.nominas) {
-		archivo << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
-		archivo << "Horas Extras: " << nomina.horasExtras << endl;
-		archivo << "Monto a Pagar: " << nomina.montoPagar << endl;
-		archivo << "Deducciones: " << nomina.deducciones << endl;
+	//Leer archivo
+	Trabajador trabajadorLeido;
+	leerArchivo(trabajadorLeido, filename);
+
+	//Imprimir Datos
+	cout << "Nombre: " << trabajadorLeido.nombre << endl;
+	cout << "Cedula: " << trabajadorLeido.cedula << endl;
+	for (const auto& nomina : trabajadorLeido.nominas) {
+		cout << "------Nomina------" << endl;
+		cout << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
+		cout << "Horas Extras: " << nomina.horasExtras << endl;
+		cout << "Monto a Pagar: " << nomina.montoPagar << endl;
+		cout << "Deducciones: " << nomina.deducciones << endl;
 	}
-
-	archivo.close();
-	cout << "Datos guardados en el archivo." << endl;
 }
 

@@ -9,15 +9,13 @@
 using namespace std;
 
 void buscarTrabajador(const Trabajador& trabajador) {
-	cout << "Nombre del trabajador: " << trabajador.nombre << endl;
-	cout << "Cedula del trabajador: " << trabajador.cedula << endl;
-
+	cout << "Nombre: " << trabajador.nombre << endl;
+	cout << "Cedula: " << trabajador.cedula << endl;
 	for (const auto& nomina : trabajador.nominas) {
-		cout << "Horas trabajadas: " << nomina.horasTrabajados << endl;
-		cout << "Horas extra: " << nomina.horasExtras << endl;
-		cout << "Monto a pagar: " << nomina.montoPagar << endl;
+		cout << "------Nomina------" << endl;
+		cout << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
+		cout << "Horas Extras: " << nomina.horasExtras << endl;
+		cout << "Monto a Pagar: " << nomina.montoPagar << endl;
 		cout << "Deducciones: " << nomina.deducciones << endl;
 	}
 }
-
-
