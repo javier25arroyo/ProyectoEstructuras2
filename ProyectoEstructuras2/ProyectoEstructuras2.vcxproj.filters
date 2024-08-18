@@ -18,6 +18,12 @@
     <ClCompile Include="ProyectoEstructuras2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Archivos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trabajador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Trabajador.h">
@@ -27,15 +33,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Archivos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Buscar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Crear.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eliminar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
