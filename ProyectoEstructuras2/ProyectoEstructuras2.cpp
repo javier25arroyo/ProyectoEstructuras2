@@ -1,63 +1,82 @@
 // ProyectoEstructuras2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// 
+// 
+// Este es el trabajo del Grupo conformado por Sebastian Chinchilla, Javier Arroyo y Daniel Echeverria
+// 
+// 
 //
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include <filesystem> 
 
 #include "Archivos.h"
 #include "Nomina.h"
-int main()
-{
-    Trabajador trabajador;
+#include "Trabajador.h"
 
-    // ingrese la data del trabajador
-    cout << "Ingrese el nombre del trabajador: ";
-    getline(cin, trabajador.nombre);
+using namespace std;
+namespace fs = std::filesystem; 
 
-    cout << "Ingrese la cedula del trabajador: ";
-    getline(cin, trabajador.cedula);
-
-    size_t numNominas;
-    cout << "Ingrese el numero de nominas: ";
-    cin >> numNominas;
-    trabajador.nominas.resize(numNominas);
-
-    //Ciclo para cada nomina a agregar // lo ideal es agregarla 1 por 1 cuando ya haya interfaz grafica
-    for (size_t i = 0; i < numNominas; ++i) {
-        cout << "\nIngrese los datos para la nomina " << i + 1 << ":\n";
-
-        cout << "Horas trabajadas: ";
-        cin >> trabajador.nominas[i].horasTrabajados;
-
-        cout << "Horas extras: ";
-        cin >> trabajador.nominas[i].horasExtras;
-
-        cout << "Monto a pagar: ";
-        cin >> trabajador.nominas[i].montoPagar;
-
-        cout << "Deducciones: ";
-        cin >> trabajador.nominas[i].deducciones;
+// Función para cargar trabajadores desde los archivos al iniciar el programa
+void cargarTrabajadores(vector<Trabajador>& trabajadores) {
+    for (const auto& entry : fs::directory_iterator(".")) {
+        if (entry.path().extension() == ".txt") {
+            Trabajador trabajador;
+            leerArchivo(trabajador, entry.path().string());
+            trabajadores.push_back(trabajador);
+        }
     }
-    //a
+    cout << trabajadores.size() << " trabajadores cargados desde archivos.\n";
+}
 
-    string filename = trabajador.nombre+".txt";
-    //escribir el archivo
-    escribirArchivo(trabajador, filename);
-
-    //Leer archivo
-    Trabajador trabajadorLeido;
-    leerArchivo(trabajadorLeido, filename);
-
-    //Imprimir Datos
-    cout << "Nombre: " << trabajadorLeido.nombre << endl;
-    cout << "Cedula: " << trabajadorLeido.cedula << endl;
-    for (const auto& nomina : trabajadorLeido.nominas) {
-        cout <<"------Nomina------" << endl;
-        cout << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
-        cout << "Horas Extras: " << nomina.horasExtras << endl;
-        cout << "Monto a Pagar: " << nomina.montoPagar << endl;
-        cout << "Deducciones: " << nomina.deducciones << endl;
+// Función para guardar todos los trabajadores en un archivo único al salir del programa
+void guardarTodosLosTrabajadores(const vector<Trabajador>& trabajadores) {
+    for (const auto& trabajador : trabajadores) {
+        string filename = trabajador.nombre + ".txt";
+        escribirArchivo(trabajador, filename);
     }
+    cout << "Todos los trabajadores han sido guardados en archivos.\n";
+}
+
+int main() {
+    vector<Trabajador> trabajadores;  // Vector que almacena todos los trabajadores
+
+    cargarTrabajadores(trabajadores); // Cargar trabajadores desde archivos al iniciar
+
+    int opcion;
+
+    do {
+        cout << "\nMenu:\n";
+        cout << "1. Agregar trabajador\n";
+        cout << "2. Buscar trabajador\n";
+        cout << "3. Eliminar trabajador\n";
+        cout << "4. Salir\n";
+        cout << "-----------------------------\n";
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cin.ignore(); // Para limpiar el buffer de entrada
+
+        switch (opcion) {
+        case 1:
+            agregarTrabajador(trabajadores);
+            break;
+        case 2:
+            buscarTrabajador(trabajadores);
+            break;
+        case 3:
+            eliminarTrabajador(trabajadores);
+            break;
+        case 4:
+            cout << "Guardando todos los trabajadores y saliendo del programa.\n";
+            guardarTodosLosTrabajadores(trabajadores);
+            break;
+        default:
+            cout << "Opcion no valida, intente nuevamente.\n";
+            break;
+        }
+    } while (opcion != 4);
+
+    return 0;
 }

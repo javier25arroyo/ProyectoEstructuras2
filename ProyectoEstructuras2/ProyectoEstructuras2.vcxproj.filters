@@ -18,6 +18,12 @@
     <ClCompile Include="ProyectoEstructuras2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Archivos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trabajador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Trabajador.h">
