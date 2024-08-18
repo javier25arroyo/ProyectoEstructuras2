@@ -10,14 +10,15 @@
 #include <vector>
 
 #include "Nomina.h"
+#include "Archivos.h" 
 
 using namespace std;
 
 struct Trabajador {
 
     string nombre;
-    string cedula ;
-    vector<Nomina>  nominas;
+    string cedula;
+    vector<Nomina> nominas;
 };
 
 // Método para crear un nuevo trabajador
@@ -37,7 +38,6 @@ void agregarTrabajador(vector<Trabajador>& trabajadores) {
 
     for (size_t i = 0; i < numNominas; ++i) {
         cout << "\nIngrese los datos para la nomina " << i + 1 << ":\n";
-
         cout << "Horas trabajadas: ";
         cin >> trabajador.nominas[i].horasTrabajados;
 

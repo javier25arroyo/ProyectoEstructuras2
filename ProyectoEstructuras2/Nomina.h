@@ -1,7 +1,6 @@
 #pragma once
 #include <fstream>
 #include <iostream>
-#include <iostream>
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,10 +9,9 @@
 
 using namespace std;
 
-
 struct Nomina {
-	int horasTrabajados;
-	int horasExtras;
-	double montoPagar;
-	double deducciones;
+    int horasTrabajados;
+    int horasExtras;
+    double montoPagar;
+    double deducciones;
 };

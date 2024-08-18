@@ -5,7 +5,7 @@
 #include <string>
 
 #include "Trabajador.h"
- 
+
 using namespace std;
 
 void escribirArchivo(const Trabajador& trabajador, const string& filename) {
@@ -18,7 +18,7 @@ void escribirArchivo(const Trabajador& trabajador, const string& filename) {
 
     archivo << "Nombre: " << trabajador.nombre << endl;
     archivo << "Cedula: " << trabajador.cedula << endl;
-    archivo << "Numero de nominas: " << trabajador.nominas.size() << endl; //anhade la cantidad de nominas al archivo
+    archivo << "Numero de nominas: " << trabajador.nominas.size() << endl;
 
     for (const auto& nomina : trabajador.nominas) {
         archivo << "Horas Trabajadas: " << nomina.horasTrabajados << endl;
@@ -41,28 +41,27 @@ void leerArchivo(Trabajador& trabajador, const string& filename) {
 
     string temp;
 
-    getline(archivo, temp);  //lee la linea y al terminar brinca a la siguiente
+    getline(archivo, temp);
+    trabajador.nombre = temp.substr(temp.find(": ") + 2);
 
-    trabajador.nombre = temp.substr(temp.find(": ") + 2);    //busca el formato de : mas dos espacios
-
-    getline(archivo, temp); 
+    getline(archivo, temp);
     trabajador.cedula = temp.substr(temp.find(": ") + 2);
 
-    getline(archivo, temp); 
+    getline(archivo, temp);
     size_t numNominas = stoi(temp.substr(temp.find(": ") + 2));
     trabajador.nominas.resize(numNominas);
 
     for (auto& nomina : trabajador.nominas) {
-        getline(archivo, temp); // Skip "Horas Trabajadas: "
+        getline(archivo, temp);
         nomina.horasTrabajados = stoi(temp.substr(temp.find(": ") + 2));
 
-        getline(archivo, temp); // Skip "Horas Extras: "
+        getline(archivo, temp);
         nomina.horasExtras = stoi(temp.substr(temp.find(": ") + 2));
 
-        getline(archivo, temp); // Skip "Monto a Pagar: "
+        getline(archivo, temp);
         nomina.montoPagar = stod(temp.substr(temp.find(": ") + 2));
 
-        getline(archivo, temp); // Skip "Deducciones: "
+        getline(archivo, temp);
         nomina.deducciones = stod(temp.substr(temp.find(": ") + 2));
     }
 
